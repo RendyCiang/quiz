@@ -9,9 +9,15 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'author',
+        'writer_id',
         'category',
         'image',
         'published_at',
     ];
+
+    public function writer()
+    {
+        return $this->belongsTo(Writer::class);
+    }
+
 }

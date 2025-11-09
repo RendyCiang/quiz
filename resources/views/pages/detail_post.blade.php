@@ -3,35 +3,36 @@
 @section('title', $post->title) 
 
 @section('content')
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-5 justify-content-center">
         <div class="col-lg-8 col-md-10"> 
             
-            <div class="card mb-4 shadow-sm"> 
+            <div class="mb-4"> 
                 
-                <div class="card-header text-center bg-white border-bottom-0 pt-4">
-                    <h1 class="card-title mb-1">{{ $post->title }}</h1>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            Published on {{ $post->published_at }} | By: {{ $post->author }}
-                        </small>
+                <div class="pt-4 px-4">
+                    <h1 class="mb-1">{{ $post->title }}</h1>
+                    <p class="mb-3" style="font-size: 12px; color: gray;">
+                        {{ $post->published_at }} | By: {{ $post->writer->name }}
                     </p>
                 </div>
 
-                {{-- 2. FOTO DI TENGAH --}}
                 <div class="text-center p-3">
                     <img 
                         src="{{ $post->image }}" 
-                        class="img-fluid rounded shadow-sm" 
+                        class="img-fluid rounded" 
                         alt="Post Image" 
-                        style="max-height: 500px; object-fit: cover;"
+                        style="
+                            max-width: 75%; /* Membuat foto tampak medium */
+                            height: auto; 
+                            max-height: 500px; 
+                            object-fit: cover;
+                        "
                     >
                 </div>
                 
-                {{-- 3. CONTENT --}}
-                <div class="card-body pt-0">
+                <div class="pt-0 px-4">
                     <hr>
-                    <div class="card-text text-justify">
-                        {{ $post->content }}
+                    <div class="text-justify">
+                        {!! $post->content !!} 
                     </div>
                 </div>
             </div>

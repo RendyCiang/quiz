@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container mt-4">
-        <h2 class="mb-4">📚 All Posts by: {{ $authorName }}</h2>
+        <h2 class="mb-4">All Posts by: {{ $authorName }}</h2>
         
         <div class="row mt-3">
             
@@ -36,7 +36,7 @@
                                     
                                     <div class="card-body">
                                         <div class="text-end"> 
-                                            <a href="/detail/{{ $item->id }}" class="btn btn-sm btn-primary">Read More</a>
+                                            <a href="/detail/{{ $item->id }}" class="btn  rounded-pill" style="background-color: #071026; color: white;">Read More...</a>
                                         </div>
                                     </div>
                                 </div>
